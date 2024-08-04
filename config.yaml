@@ -1,0 +1,30 @@
+# General input/ouput info
+frames: 8
+num_classes: 1
+img_size: 224
+patch_size: 16
+spatial_frozen: False
+spatial_size: base
+# ImageNet-21K trained for better performance
+spatial_suffix: _miil.in21k
+
+# Spatial Transformer
+spatial_args:
+  img_size: 28
+  in_chans: 256
+  attn_drop_rate: 0.0
+  drop_rate: 0.0
+
+  # Temporal Transformer
+temporal_type: linformer
+temporal_args:
+  k: 8
+  dim: 768
+  depth: 3
+  heads: 12
+  dim_head: 128
+  mlp_dim: 3072
+  one_kv_head: False
+  share_kv: True
+  dropout: 0.1
+  emb_dropout: 0.5
